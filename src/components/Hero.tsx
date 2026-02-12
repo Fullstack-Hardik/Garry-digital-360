@@ -34,17 +34,18 @@ const Hero = () => {
             <div className="animate-slide-up mb-8" style={{ animationDelay: "0.3s" }}>
               <div className="relative rounded-2xl overflow-hidden card-shadow max-w-2xl mx-auto lg:mx-0">
                 <video
-                  className="w-full aspect-video object-cover pointer-events-none"
+                  className="w-full aspect-video object-cover"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  poster="/videos/demo.mp4#t=0.1"
                   preload="auto"
                 >
                   <source src="/videos/demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                {/* Invisible overlay to prevent user interaction */}
+                <div className="absolute inset-0 pointer-events-auto cursor-default" onClick={(e) => e.preventDefault()} />
               </div>
             </div>
 
