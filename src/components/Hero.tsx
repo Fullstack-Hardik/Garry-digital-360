@@ -30,14 +30,17 @@ const Hero = () => {
               Transform your business with stunning virtual tours. We capture every angle of hotels, restaurants, schools, and more — bringing your space to life on Google Maps.
             </p>
 
-            {/* Video Section */}
+            {/* Video Section - Fixed Ad Style (No Controls) */}
             <div className="animate-slide-up mb-8" style={{ animationDelay: "0.3s" }}>
               <div className="relative rounded-2xl overflow-hidden card-shadow max-w-2xl mx-auto lg:mx-0">
                 <video
-                  className="w-full aspect-video object-cover"
-                  controls
+                  className="w-full aspect-video object-cover pointer-events-none"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   poster="/videos/demo.mp4#t=0.1"
-                  preload="metadata"
+                  preload="auto"
                 >
                   <source src="/videos/demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
