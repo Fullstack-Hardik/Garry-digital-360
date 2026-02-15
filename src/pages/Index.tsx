@@ -7,6 +7,7 @@ import VirtualTour from "@/components/VirtualTour";
 import Contact from "@/components/Contact";
 import InstagramProfile from "@/components/InstagramProfile";
 import Footer from "@/components/Footer";
+import PhotographerSection from "@/components/PhotographerSection";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
         <Pricing />
         <VirtualTour />
         <Portfolio />
+        <PhotographerSection />
         <Contact />
         <InstagramProfile />
         <Footer />
@@ -32,3 +34,4 @@ const Index = () => {
   );
 };
 export default Index;
+

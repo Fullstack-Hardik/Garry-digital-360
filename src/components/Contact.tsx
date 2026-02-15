@@ -1,25 +1,19 @@
-import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { Phone, Mail, MapPin, MessageCircle, Copy } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    message: "",
-  });
+  const phoneNumber = "+919740044911";
+  const email = "garrydigital360@gmail.com";
+  const whatsappLink = "https://wa.me/919740044911";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Thank you! We'll get back to you within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", business: "", message: "" });
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    toast.success("Email copied to clipboard!");
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(phoneNumber);
+    toast.success("Phone number copied to clipboard!");
   };
 
   return (
@@ -43,156 +37,97 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <a href="tel:+919740044911" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Phone</div>
-                    <div className="font-semibold group-hover:text-primary transition-colors">+91 97400 44911</div>
-                  </div>
-                </a>
-
-                <a href="mailto:garrydigital360@gmail.com" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-5 h-5 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Email</div>
-                    <div className="font-semibold group-hover:text-primary transition-colors">garrydigital360@gmail.com</div>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Location</div>
-                    <div className="font-semibold">Available Pan-India</div>
-                  </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Contact Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {/* Phone Card */}
+            <div className="glass rounded-2xl p-6 hover:bg-card/80 transition-all duration-300 hover:-translate-y-2 hover:elevated-shadow group">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-8 h-8 text-primary-foreground" />
                 </div>
+                <div>
+                  <div className="text-sm text-muted-foreground mb-2">Phone</div>
+                  <a 
+                    href={`tel:${phoneNumber}`}
+                    className="font-semibold text-lg hover:text-primary transition-colors"
+                  >
+                    {phoneNumber}
+                  </a>
+                </div>
+                <button
+                  onClick={handleCopyPhone}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Copy className="w-4 h-4" />
+                  Copy Number
+                </button>
               </div>
             </div>
 
-            {/* WhatsApp CTA */}
+            {/* Email Card */}
+            <div className="glass rounded-2xl p-6 hover:bg-card/80 transition-all duration-300 hover:-translate-y-2 hover:elevated-shadow group">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-8 h-8 text-accent-foreground" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground mb-2">Email</div>
+                  <a 
+                    href={`mailto:${email}`}
+                    className="font-semibold text-base hover:text-primary transition-colors break-all"
+                  >
+                    {email}
+                  </a>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Copy className="w-4 h-4" />
+                  Copy Email
+                </button>
+              </div>
+            </div>
+
+            {/* Location Card */}
+            <div className="glass rounded-2xl p-6 hover:bg-card/80 transition-all duration-300 hover:-translate-y-2 hover:elevated-shadow group">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-xl glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground mb-2">Location</div>
+                  <div className="font-semibold text-lg">
+                    Available Pan-India
+                  </div>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Serving clients nationwide
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp CTA - Prominent */}
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#25D366] to-[#22c55e] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
             <a
-              href="https://wa.me/919740044911"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-[#25D366] text-white font-semibold hover:bg-[#22c55e] transition-colors duration-300"
+              className="relative flex items-center justify-center gap-3 w-full p-6 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#22c55e] transition-all duration-300 hover:scale-105 group"
             >
-              <MessageCircle className="w-6 h-6" />
-              Chat on WhatsApp
+              <MessageCircle className="w-7 h-7 group-hover:scale-110 transition-transform" />
+              <span>Chat with Us on WhatsApp</span>
+              <div className="absolute inset-0 rounded-2xl bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
             </a>
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2" htmlFor="name">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2" htmlFor="phone">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
-                    placeholder="+91 97400 44911"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2" htmlFor="business">
-                  Business Type
-                </label>
-                <select
-                  id="business"
-                  name="business"
-                  value={formData.business}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300"
-                >
-                  <option value="">Select your business</option>
-                  <option value="hotel">Hotel / Resort</option>
-                  <option value="restaurant">Restaurant / Cafe</option>
-                  <option value="airbnb">Airbnb / Rental</option>
-                  <option value="school">School / College</option>
-                  <option value="kindergarten">Kindergarten</option>
-                  <option value="dental">Dental / Medical Clinic</option>
-                  <option value="salon">Salon / Spa</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2" htmlFor="message">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-
-              <Button type="submit" variant="hero" size="lg" className="w-full">
-                <Send className="w-5 h-5" />
-                Send Message
-              </Button>
-            </div>
-          </form>
+          {/* Additional Info */}
+          <p className="text-center text-sm text-muted-foreground mt-8">
+            We typically respond within 1-2 hours during business hours
+          </p>
         </div>
       </div>
     </section>
