@@ -1,9 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import GuidanceVideo from "@/components/GuidanceVideo";
 import Pricing from "@/components/Pricing";
 import Portfolio from "@/components/Portfolio";
 import VirtualTour from "@/components/VirtualTour";
+import Vision from "@/components/Vision";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import InstagramProfile from "@/components/InstagramProfile";
 import Footer from "@/components/Footer";
@@ -26,8 +29,11 @@ const Index = () => {
         <VirtualTour />
         <Portfolio />
         <PhotographerSection />
+        <Vision />
+        <FAQ />
         <Contact />
         <InstagramProfile />
+        <GuidanceVideo />
         <Footer />
       </div>
     </div>

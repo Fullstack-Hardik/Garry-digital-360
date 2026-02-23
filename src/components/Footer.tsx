@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Mail,
   Phone,
@@ -35,6 +36,7 @@ function Footer() {
           href: "#contact",
           pulse: true,
         },
+        { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
       ],
     },
   ];
@@ -92,12 +94,21 @@ function Footer() {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label} className="relative">
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-[#FFD700] transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {link.isRoute ? (
+                      <Link
+                        to={link.href}
+                        className="text-gray-400 hover:text-[#FFD700] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-gray-400 hover:text-[#FFD700] transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                     {link.pulse && (
                       <span className="absolute top-0 right-[-10px] w-2 h-2 rounded-full bg-[#FFD700] animate-pulse"></span>
                     )}

@@ -94,11 +94,11 @@ const Hero = () => {
 
             {/* Subtitle */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              Immersive 360° Virtual Tours
+              Professional 360 Virtual Tour Service for Business Growth
             </h2>
 
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-              Transform your business with stunning virtual tours. We capture every angle of hotels, restaurants, schools, and more — bringing your space to life on Google Maps.
+              GarryDigital360 is your trusted 360 camera service for business — a Google Street View Trusted Photographer helping hotels, restaurants, showrooms, and businesses increase Google Maps ranking with stunning virtual tours across India.
             </p>
 
             {/* Enhanced Video Section */}
@@ -167,7 +167,7 @@ const Hero = () => {
               <div className="absolute inset-4 rounded-full bg-gradient-card overflow-hidden shadow-2xl flex items-center justify-center p-6">
                 <img 
                   src={logo} 
-                  alt="Garry Digital 360" 
+                  alt="GarryDigital360 — Professional 360 virtual tour service and Google Street View Trusted Photographer" 
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>

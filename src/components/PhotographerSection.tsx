@@ -1,5 +1,6 @@
 import { RevealText } from "@/components/ui/reveal-text";
 import { Camera, Award, MapPin, Instagram, Linkedin, Mail } from "lucide-react";
+import garryFounderImg from "@/assets/garry-founder.jpg";
 
 const PhotographerSection = () => {
   return (
@@ -45,8 +46,8 @@ const PhotographerSection = () => {
               <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative rounded-2xl overflow-hidden card-shadow">
                 <img 
-                  src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80"
-                  alt="Professional Photographer with Camera"
+                  src={garryFounderImg}
+                  alt="Garry - Founder & Lead Photographer at Garry Digital 360"
                   className="w-full h-auto object-cover aspect-[4/5]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
