@@ -50,8 +50,8 @@ function Footer() {
     },
     {
       icon: <Phone size={18} className="text-[#FF8C00]" />,
-      text: "+91 98765 43210",
-      href: "tel:+919876543210",
+      text: "+91 97400 44911",
+      href: "tel:+919740044911",
     },
     {
       icon: <MapPin size={18} className="text-[#00CED1]" />,

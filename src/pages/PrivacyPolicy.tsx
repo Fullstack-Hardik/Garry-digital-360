@@ -132,8 +132,8 @@ const PrivacyPolicy = () => {
                 </a>
               </p>
               <p className="text-foreground"><strong>Phone:</strong>{" "}
-                <a href="tel:+919876543210" className="text-primary hover:underline">
-                  +91 98765 43210
+                <a href="tel:+919740044911" className="text-primary hover:underline">
+                  +91 97400 44911
                 </a>
               </p>
               <p className="text-foreground"><strong>Location:</strong> Delhi, India</p>
