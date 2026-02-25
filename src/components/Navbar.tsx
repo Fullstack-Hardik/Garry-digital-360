@@ -28,7 +28,7 @@ const Navbar = () => {
             />
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent leading-tight">
-                GARRY 360
+                GARRY DIGITAL 360
               </span>
               <span className="text-xs font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent tracking-wide">
                 Virtual Tours
