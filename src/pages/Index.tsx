@@ -11,6 +11,7 @@ import Contact from "@/components/Contact";
 import InstagramProfile from "@/components/InstagramProfile";
 import Footer from "@/components/Footer";
 import PhotographerSection from "@/components/PhotographerSection";
+import GallerySection from "@/components/GallerySection";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
         <Pricing />
         <VirtualTour />
         <Portfolio />
+        <GallerySection />
         <PhotographerSection />
         <Vision />
         <FAQ />
