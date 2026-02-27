@@ -1,6 +1,6 @@
 import { RevealText } from "@/components/ui/reveal-text";
 import { Camera, Award, MapPin, Instagram, Linkedin, Mail } from "lucide-react";
-import garryFounderImg from "@/assets/garry-founder.jpg";
+import garryFounderImg from "@/assets/garry-founder-new.jpg";
 
 const PhotographerSection = () => {
   return (
