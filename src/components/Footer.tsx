@@ -29,7 +29,6 @@ function Footer() {
     {
       title: "Quick Links",
       links: [
-        { label: "Portfolio", href: "#portfolio" },
         { label: "Pricing", href: "#pricing" },
         {
           label: "Contact Us",

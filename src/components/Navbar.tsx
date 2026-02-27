@@ -11,7 +11,6 @@ const Navbar = () => {
     { name: "Services", href: "#services" },
     { name: "Pricing", href: "#pricing" },
     { name: "360°", href: "#virtual-tour" },
-    { name: "Portfolio", href: "#portfolio" },
     { name: "Contact", href: "#contact" },
   ];
 

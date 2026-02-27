@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import GuidanceVideo from "@/components/GuidanceVideo";
 import Pricing from "@/components/Pricing";
-import Portfolio from "@/components/Portfolio";
 import VirtualTour from "@/components/VirtualTour";
 import Vision from "@/components/Vision";
 import FAQ from "@/components/FAQ";
@@ -28,7 +27,6 @@ const Index = () => {
         <Services />
         <Pricing />
         <VirtualTour />
-        <Portfolio />
         <GallerySection />
         <PhotographerSection />
         <Vision />
