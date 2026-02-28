@@ -82,10 +82,15 @@ const Hero = () => {
 
                 {/* Text overlay */}
                 <div className="absolute inset-0 flex items-center justify-center w-full">
-                  <h1 className="text-[7.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black italic ml-[2vw] sm:ml-0 bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#00CED1] bg-clip-text text-transparent leading-tight whitespace-nowrap px-4 text-center">
-                    GARRY DIGITAL 360
-                  </h1>
-                </div>
+  <h1 className="text-[7.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+  font-black italic 
+  ml-[5vw] sm:ml-[3vw] md:ml-[4vw] lg:ml-[5vw] 
+  bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#00CED1] 
+  bg-clip-text text-transparent 
+  leading-tight whitespace-nowrap px-4 text-center">
+    GARRY DIGITAL 360
+  </h1>
+</div>
 
                 {/* Radial Gradient to prevent sharp edges */}
                 <div className="absolute inset-0 w-full h-full [mask-image:radial-gradient(400px_150px_at_top,transparent_20%,white)]"></div>
