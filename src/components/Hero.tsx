@@ -82,7 +82,7 @@ const Hero = () => {
 
                 {/* Text overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#00CED1] bg-clip-text text-transparent leading-tight whitespace-nowrap px-4">
+                  <h1 className="text-2xl min-[380px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#00CED1] bg-clip-text text-transparent leading-tight whitespace-nowrap px-4">
                     GARRY DIGITAL 360
                   </h1>
                 </div>
