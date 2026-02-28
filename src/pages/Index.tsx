@@ -7,7 +7,6 @@ import VirtualTour from "@/components/VirtualTour";
 import Vision from "@/components/Vision";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
-import InstagramProfile from "@/components/InstagramProfile";
 import Footer from "@/components/Footer";
 import PhotographerSection from "@/components/PhotographerSection";
 import GallerySection from "@/components/GallerySection";
@@ -32,7 +31,6 @@ const Index = () => {
         <Vision />
         <FAQ />
         <Contact />
-        <InstagramProfile />
         <GuidanceVideo />
         <Footer />
       </div>

@@ -61,7 +61,7 @@ function Footer() {
   // Social media icons
   const socialLinks = [
     { icon: <Facebook size={20} />, label: "Facebook", href: "#" },
-    { icon: <Instagram size={20} />, label: "Instagram", href: "#" },
+    { icon: <Instagram size={20} />, label: "Instagram", href: "https://instagram.com/garrydigital360" },
     { icon: <Twitter size={20} />, label: "Twitter", href: "#" },
     { icon: <Dribbble size={20} />, label: "Dribbble", href: "#" },
     { icon: <Globe size={20} />, label: "Website", href: "#" },
