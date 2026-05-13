@@ -111,6 +111,7 @@ const Contact = () => {
                       F1-707, Meerut Sports City, Uttar Pradesh 250110
                     </div>
                   </a>
+                </div>
               </div>
             </div>
           </div>
