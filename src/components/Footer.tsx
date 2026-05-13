@@ -20,21 +20,21 @@ function Footer() {
     {
       title: "Services",
       links: [
-        { label: "360° Virtual Tours", href: "/#services" },
-        { label: "Website Development", href: "/#services" },
-        { label: "SEO Optimization", href: "/#services" },
-        { label: "Google Maps Integration", href: "/#services" },
+        { label: "360° Virtual Tours", href: "#services" },
+        { label: "Website Development", href: "#services" },
+        { label: "SEO Optimization", href: "#services" },
+        { label: "Google Maps Integration", href: "#services" },
       ],
     },
     {
       title: "Quick Links",
       links: [
-        { label: "About Us", href: "/about", isRoute: true },
-        { label: "Portfolio", href: "/portfolio", isRoute: true },
-        { label: "Pricing", href: "/#pricing" },
+        { label: "About Us", href: "#about" },
+        { label: "Portfolio", href: "#portfolio" },
+        { label: "Pricing", href: "#pricing" },
         {
           label: "Contact Us",
-          href: "/#contact",
+          href: "#contact",
           pulse: true,
         },
         { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
