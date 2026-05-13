@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isScrolled, setIsScrolled] = useState(false);
+  
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -16,23 +18,33 @@ const Navbar = () => {
     { name: "Contact", href: "/#contact" },
   ];
 
+  // Handle scroll for sticky effect
+  if (typeof window !== "undefined") {
+    window.onscroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+  }
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "mt-4 px-4" : "mt-0 px-0"}`}>
+      <div className={`container mx-auto px-4 sm:px-6 transition-all duration-500 ${isScrolled ? "glass-premium rounded-full py-2 shadow-lg max-w-6xl" : "glass py-4 border-none"}`}>
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo with updated design */}
           <a href="#home" className="flex items-center gap-3 group">
-            <img 
-              src={logo} 
-              alt="Garry Digital 360" 
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl group-hover:scale-110 transition-transform duration-300 card-shadow"
-            />
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-500" />
+              <img 
+                src={logo} 
+                alt="Garry Digital 360" 
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl relative group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent leading-tight">
-                GARRY DIGITAL 360
+              <span className="text-sm sm:text-base font-black tracking-tight text-foreground leading-tight">
+                GARRY DIGITAL <span className="text-primary">360</span>
               </span>
-              <span className="text-xs font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent tracking-wide">
-                Virtual Tours
+              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                Immersive Visuals
               </span>
             </div>
           </a>
@@ -43,14 +55,14 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                className="text-sm font-bold text-muted-foreground hover:text-primary transition-all duration-300 relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
             <Link to="/#contact">
-              <Button variant="hero" size="sm">
+              <Button variant="hero" size="sm" className="rounded-full px-6 h-10 shadow-lg shadow-primary/20">
                 Get Started
               </Button>
             </Link>
@@ -58,33 +70,40 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Button variant="hero" className="mt-2">
-                Get Started
-              </Button>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="py-6 flex flex-col gap-4 border-t border-white/10 mt-2">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-base font-bold text-muted-foreground hover:text-primary transition-colors duration-300 py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <Button variant="hero" className="mt-4 rounded-full w-full">
+                  Get Started
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

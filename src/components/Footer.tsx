@@ -45,18 +45,18 @@ function Footer() {
   // Contact info data - Garry Digital 360
   const contactInfo = [
     {
-      icon: <Mail size={18} className="text-[#FFD700]" />,
-      text: "contact@garrydigital360.com",
-      href: "mailto:contact@garrydigital360.com",
+      icon: <Mail size={18} className="text-primary" />,
+      text: "garrydigital360@gmail.com",
+      href: "mailto:garrydigital360@gmail.com",
     },
     {
-      icon: <Phone size={18} className="text-[#FF8C00]" />,
+      icon: <Phone size={18} className="text-primary" />,
       text: "+91 97400 44911",
       href: "tel:+919740044911",
     },
     {
-      icon: <MapPin size={18} className="text-[#00CED1]" />,
-      text: "Nirvana River Resort, Rishikesh, Uttarakhand, 249201",
+      icon: <MapPin size={18} className="text-primary" />,
+      text: "Nirvana River Resort, Rishikesh, Uttarakhand",
     },
   ];
 
@@ -70,48 +70,64 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0F0F11]/10 relative h-fit rounded-3xl overflow-hidden m-8">
-      <div className="max-w-7xl mx-auto p-14 z-40 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
+    <footer className="relative pt-24 pb-12 overflow-hidden bg-background">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand section */}
-          <div className="flex flex-col space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="text-[#FFD700] text-3xl font-extrabold">
-                360°
-              </span>
-              <span className="text-white text-3xl font-bold">Garry Digital</span>
+          <div className="flex flex-col space-y-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                <span className="text-white font-black text-xl">360</span>
+              </div>
+              <span className="text-2xl font-black tracking-tighter">GARRY <span className="text-primary">DIGITAL</span></span>
             </div>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Transforming spaces into immersive digital experiences. Professional 360° virtual tours for your business.
+            <p className="text-muted-foreground text-base leading-relaxed">
+              Transforming physical spaces into immersive digital experiences. We are certified Google Street View Trusted Photographers.
             </p>
+            <div className="flex space-x-4">
+              {socialLinks.map(({ icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full glass-premium flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Footer link sections */}
           {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-white text-lg font-semibold mb-6">
+            <div key={section.title} className="lg:ml-auto">
+              <h4 className="text-foreground text-lg font-bold mb-8 relative">
                 {section.title}
+                <span className="absolute -bottom-2 left-0 w-8 h-1 bg-primary rounded-full" />
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {section.links.map((link) => (
-                  <li key={link.label} className="relative">
+                  <li key={link.label}>
                     {link.isRoute ? (
                       <Link
                         to={link.href}
-                        className="text-gray-400 hover:text-[#FFD700] transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center group"
                       >
+                        <span className="w-0 group-hover:w-4 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
                         {link.label}
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-[#FFD700] transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center group"
                       >
+                        <span className="w-0 group-hover:w-4 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
                         {link.label}
                       </a>
-                    )}
-                    {link.pulse && (
-                      <span className="absolute top-0 right-[-10px] w-2 h-2 rounded-full bg-[#FFD700] animate-pulse"></span>
                     )}
                   </li>
                 ))}
@@ -120,23 +136,26 @@ function Footer() {
           ))}
 
           {/* Contact section */}
-          <div>
-            <h4 className="text-white text-lg font-semibold mb-6">
-              Contact Us
+          <div className="lg:ml-auto">
+            <h4 className="text-foreground text-lg font-bold mb-8 relative">
+              Connect With Us
+              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-primary rounded-full" />
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-6">
               {contactInfo.map((item, i) => (
-                <li key={i} className="flex items-center space-x-3">
-                  {item.icon}
+                <li key={i} className="flex items-start space-x-4 group">
+                  <div className="mt-1 w-8 h-8 rounded-lg glass-premium flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                    {item.icon}
+                  </div>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="text-gray-400 hover:text-[#FFD700] transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm leading-relaxed"
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-gray-400 hover:text-[#FFD700] transition-colors text-sm">
+                    <span className="text-muted-foreground text-sm leading-relaxed">
                       {item.text}
                     </span>
                   )}
@@ -146,37 +165,21 @@ function Footer() {
           </div>
         </div>
 
-        <hr className="border-t border-gray-700 my-8" />
-
-        {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
-          {/* Social icons */}
-          <div className="flex space-x-6 text-gray-400">
-            {socialLinks.map(({ icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                className="hover:text-[#FFD700] transition-colors"
-              >
-                {icon}
-              </a>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          <p className="text-center md:text-left text-gray-400">
-            &copy; {new Date().getFullYear()} Garry Digital 360. All rights reserved.
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-muted-foreground text-sm font-medium">
+            &copy; {new Date().getFullYear()} <span className="text-foreground font-bold">Garry Digital 360</span>. All rights reserved.
           </p>
+          <div className="flex items-center gap-8 text-sm font-bold text-muted-foreground">
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
 
-      {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
-        <TextHoverEffect text="GARRY DIGITAL 360" className="z-50" />
+      {/* Decorative text */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.02]">
+        <span className="text-[15vw] font-black whitespace-nowrap">GARRY DIGITAL 360</span>
       </div>
-
-      <FooterBackgroundGradient />
     </footer>
   );
 }

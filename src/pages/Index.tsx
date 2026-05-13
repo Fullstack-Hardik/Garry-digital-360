@@ -10,6 +10,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PhotographerSection from "@/components/PhotographerSection";
 import GallerySection from "@/components/GallerySection";
+import Process from "@/components/Process";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 const Index = () => {
@@ -24,6 +26,7 @@ const Index = () => {
         <Navbar />
         <Hero />
         <Services />
+        <Process />
         <Pricing />
         <VirtualTour />
         <GallerySection />
@@ -31,6 +34,7 @@ const Index = () => {
         <Vision />
         <FAQ />
         <Contact />
+        <WhatsAppButton />
         <GuidanceVideo />
         <Footer />
       </div>

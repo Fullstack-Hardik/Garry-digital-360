@@ -53,34 +53,54 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 md:py-32 relative">
-      {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      </div>
+    <section id="services" className="py-24 md:py-36 relative overflow-hidden">
+      {/* Background patterns */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <AnimatedContainer className="mx-auto max-w-3xl text-center mb-12">
-          <span className="inline-block px-4 py-2 rounded-full glass text-primary text-sm font-semibold mb-4">
-            Our Services
+        <AnimatedContainer className="mx-auto max-w-3xl text-center mb-20">
+          <span className="inline-block px-4 py-1.5 rounded-full glass-premium text-primary text-sm font-semibold mb-6 tracking-wider uppercase">
+            Expert Solutions
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Everything You Need for <span className="text-gradient">Virtual Excellence</span>
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
+            Elevate Your <span className="text-gradient">Digital Vision</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Professional 360° virtual tour services powered by cutting-edge technology and creative expertise.
+          <p className="text-muted-foreground text-xl leading-relaxed">
+            From immersive 360° experiences to high-performance web development, we provide the tools to make your business truly stand out.
           </p>
         </AnimatedContainer>
 
-        <AnimatedContainer
-          delay={0.4}
-          className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed rounded-2xl overflow-hidden sm:grid-cols-2 md:grid-cols-3"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
-            <FeatureCard key={i} feature={service} />
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              whileHover={{ y: -10 }}
+              className="glass-premium p-8 rounded-3xl group relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10"
+            >
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 group-hover:bg-primary/30">
+                <service.icon className="w-8 h-8 text-primary" />
+              </div>
+              
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed group-hover:text-foreground/80 transition-colors">
+                {service.description}
+              </p>
+              
+              <div className="mt-8 flex items-center text-primary font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                Learn more <Sparkles className="ml-2 w-4 h-4 animate-pulse" />
+              </div>
+            </motion.div>
           ))}
-        </AnimatedContainer>
+        </div>
       </div>
     </section>
   );

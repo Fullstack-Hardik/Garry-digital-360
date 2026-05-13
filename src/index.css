@@ -57,10 +57,17 @@
       hsl(220 20% 14% / 0.8) 0%,
       hsl(220 20% 10% / 0.6) 100%
     );
+    --gradient-gold: linear-gradient(
+      135deg,
+      #FFD700 0%,
+      #FFA500 50%,
+      #FF8C00 100%
+    );
 
     --shadow-glow: 0 0 60px hsl(180 85% 50% / 0.2);
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
     --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.4);
+    --shadow-gold: 0 10px 30px rgba(255, 215, 0, 0.15);
 
     --sidebar-background: 220 20% 10%;
     --sidebar-foreground: 210 40% 98%;
@@ -79,12 +86,23 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: "Outfit", sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-primary/30 transition-colors;
   }
 }
 
@@ -99,8 +117,17 @@
     background-image: var(--gradient-accent);
   }
 
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
   .bg-gradient-primary {
     background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
   }
 
   .bg-gradient-card {
@@ -111,8 +138,16 @@
     @apply backdrop-blur-xl bg-card/60 border border-border/50;
   }
 
+  .glass-premium {
+    @apply backdrop-blur-2xl bg-white/[0.03] border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+
   .glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
   .card-shadow {
@@ -121,6 +156,10 @@
 
   .elevated-shadow {
     box-shadow: var(--shadow-elevated);
+  }
+
+  .shimmer {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent;
   }
 }
 
@@ -147,6 +186,12 @@
 
   .animate-rainbow-spin {
     animation: rainbow-spin 4s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
   }
 }
 
