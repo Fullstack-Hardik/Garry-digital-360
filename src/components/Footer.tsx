@@ -56,7 +56,7 @@ function Footer() {
     },
     {
       icon: <MapPin size={18} className="text-[#00CED1]" />,
-      text: "F1-707, Meerut Sports City, Supertech, Modipuram, Meerut, UP 250110",
+      text: "Nirvana River Resort, Rishikesh, Uttarakhand, 249201",
     },
   ];
 

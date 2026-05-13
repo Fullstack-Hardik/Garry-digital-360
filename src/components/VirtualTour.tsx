@@ -24,14 +24,14 @@ const TOURS = [
   },
   {
     id: 2,
-    name: "Supertech Modipuram",
-    location: "Meerut, Uttar Pradesh",
+    name: "Nirvana River Resort",
+    location: "Rishikesh, Uttarakhand",
     embedUrl:
-      "https://www.google.com/maps?q=&layer=c&cbll=29.0729732,77.7161184&cbp=12,3.29,0,0,0&output=svembed",
+      "https://www.google.com/maps?q=&layer=c&cbll=30.0584703,78.4202943&cbp=12,272.46,0,0,83.07&output=svembed",
     mapsUrl:
-      "https://maps.app.goo.gl/7MYydPZ141WFX8VT6",
-    gradient: "from-pink-500/20 to-rose-500/20",
-    accent: "text-pink-400",
+      "https://www.google.com/maps/place/Nirvana+River+Resort/@30.0584703,78.4202943,3a,75y,272.46h,83.07t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIC4yoOHWA!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FABJJf51D7AuLIrwjo5R5zmsKfvKsy1LT2bYPCPLec9vTmiETzvQBUOKirm1qO6TTV4gq11f93W2jZ1T5xh8XMa69kWTV2FcSy3ucZU7AK2zjkN3hycsPa6dE_RjjRxoZifnxn6Wh0Aw%3Dw900-h600-k-no-pi6.93047118662372-ya242.58359619151094-ro0-fo100!7i13312!8i6656!4m10!3m9!1s0x39091307baf9794d:0x6e593becbe530d7c!5m2!4m1!1i2!8m2!3d30.0584839!4d78.4203135!10e5!16s%2Fg%2F11csq_8dd0?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    accent: "text-blue-400",
   },
   {
     id: 3,

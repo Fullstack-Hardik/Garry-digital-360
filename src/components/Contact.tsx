@@ -99,11 +99,11 @@ const Contact = () => {
                 <div>
                   <div className="text-sm text-muted-foreground mb-2">Location</div>
                   <div className="font-semibold text-lg">
-                    F1-707, Meerut Sports City
+                    Nirvana River Resort
                   </div>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Supertech, Modipuram, Meerut, UP 250110
+                  Rishikesh, Uttarakhand, 249201
                 </div>
               </div>
             </div>
