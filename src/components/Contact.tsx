@@ -98,13 +98,19 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground mb-2">Location</div>
-                  <div className="font-semibold text-lg">
-                    Nirvana River Resort
-                  </div>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Rishikesh, Uttarakhand, 249201
-                </div>
+                  <a 
+                    href="https://share.google/Mi9vQYdw7vqthxo6F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group-hover:text-primary transition-colors"
+                  >
+                    <div className="font-semibold text-lg">
+                      Supertech Modipuram
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      F1-707, Meerut Sports City, Uttar Pradesh 250110
+                    </div>
+                  </a>
               </div>
             </div>
           </div>

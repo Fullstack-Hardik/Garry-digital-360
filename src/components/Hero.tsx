@@ -6,7 +6,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />

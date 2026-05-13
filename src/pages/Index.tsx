@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
 import Services from "@/components/Services";
+import PortfolioSection from "@/components/PortfolioSection";
 import GuidanceVideo from "@/components/GuidanceVideo";
 import Pricing from "@/components/Pricing";
 import VirtualTour from "@/components/VirtualTour";
@@ -25,8 +27,10 @@ const Index = () => {
       <div className="relative" style={{ zIndex: 2 }}>
         <Navbar />
         <Hero />
+        <AboutSection />
         <Services />
         <Process />
+        <PortfolioSection />
         <Pricing />
         <VirtualTour />
         <GallerySection />
@@ -42,4 +46,5 @@ const Index = () => {
   );
 };
 export default Index;
+
 
