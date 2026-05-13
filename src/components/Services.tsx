@@ -72,35 +72,14 @@ const Services = () => {
           </p>
         </AnimatedContainer>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatedContainer
+          delay={0.4}
+          className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed rounded-2xl overflow-hidden sm:grid-cols-2 md:grid-cols-3"
+        >
           {services.map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -10 }}
-              className="glass-premium p-8 rounded-3xl group relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10"
-            >
-              {/* Shimmer effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 group-hover:bg-primary/30">
-                <service.icon className="w-8 h-8 text-primary" />
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-              <p className="text-muted-foreground text-base leading-relaxed group-hover:text-foreground/80 transition-colors">
-                {service.description}
-              </p>
-              
-              <div className="mt-8 flex items-center text-primary font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                Learn more <Sparkles className="ml-2 w-4 h-4 animate-pulse" />
-              </div>
-            </motion.div>
+            <FeatureCard key={i} feature={service} />
           ))}
-        </div>
+        </AnimatedContainer>
       </div>
     </section>
   );
