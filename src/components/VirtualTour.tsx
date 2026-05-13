@@ -24,12 +24,12 @@ const TOURS = [
   },
   {
     id: 2,
-    name: "Heritage Location",
-    location: "Jaipur, Rajasthan",
+    name: "Supertech Modipuram",
+    location: "Meerut, Uttar Pradesh",
     embedUrl:
-      "https://www.google.com/maps?q=&layer=c&cbll=26.92578,75.802744&cbp=12,3.29,0,0,0&output=svembed",
+      "https://www.google.com/maps?q=&layer=c&cbll=29.0729732,77.7161184&cbp=12,3.29,0,0,0&output=svembed",
     mapsUrl:
-      "https://www.google.com/maps/@26.92578,75.802744,3a,75y,3.29h,96.53t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgID4lo7JFg!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAFfmt2acX9X1_RZxbccQy3PfkMqHcnUagmmthJ-nmUMBRXYxTYWbRIyVxoyCNJQ1j64ZC8v-RTMJZQACVWMJWyZa_YhRbOX6HmUVDwpqE4SgJKxou5nDRWDklphZIE_u6euKaymFjhOG%3Dw900-h600-k-no-pi-6.527944768321248-ya3.290493355780029-ro0-fo100!7i4096!8i2048?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+      "https://maps.app.goo.gl/7MYydPZ141WFX8VT6",
     gradient: "from-pink-500/20 to-rose-500/20",
     accent: "text-pink-400",
   },

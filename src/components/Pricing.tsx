@@ -1,23 +1,20 @@
 import { PricingComponent } from "@/components/ui/pricing";
 
-const pricingPlans = [
+const virtualTourPlans = [
   {
-    name: "Basic Plan",
+    name: "Basic 360°",
     originalPrice: "19999",
     discountedPrice: "14999",
     period: "Lifetime",
     features: [
-      "Up to 10 high-resolution 360° panoramic scenes",
-      "Basic navigation between scenes",
-      "Website embed code (iframe)",
-      "QR code / Link access for easy sharing",
-      "Optimized for Google Maps & Google Business Profile",
-      "360° photo soft copies (available at additional cost)",
-      "Local Business Map Ranking Boost Helper",
-      "Onsite 360° Shoot at Your Business Location",
-      "Delivery: 3–5 Working Days",
+      "Up to 10 panoramic scenes",
+      "Basic navigation",
+      "Website embed code",
+      "Google Maps Optimized",
+      "Onsite 360° Shoot",
+      "Delivery: 3–5 Days",
     ],
-    description: "Perfect for small shops, cafes & clinics",
+    description: "Perfect for small shops & cafes",
     buttonText: "Book Now",
     href: "#contact",
     isPopular: false,
@@ -25,22 +22,19 @@ const pricingPlans = [
     savings: "Save ₹5,000",
   },
   {
-    name: "Standard Plan",
+    name: "Standard 360°",
     originalPrice: "24999",
     discountedPrice: "19999",
     period: "Lifetime",
     features: [
-      "Up to 15 high-resolution 360° panoramic scenes",
-      "Basic navigation between scenes",
-      "Website embed code (iframe)",
-      "QR code / Link access for easy sharing",
-      "Optimized for Google Maps & Google Business Profile",
-      "360° photo soft copies (at NO additional cost)",
-      "Local Business Map Ranking Boost Helper",
-      "Onsite 360° Shoot at Your Business Location",
-      "Delivery: 5–7 Working Days",
+      "Up to 15 panoramic scenes",
+      "Basic navigation",
+      "Website embed code",
+      "Google Maps Optimized",
+      "360° photo soft copies",
+      "Delivery: 5–7 Days",
     ],
-    description: "Ideal for restaurants, salons & showrooms",
+    description: "Ideal for restaurants & salons",
     buttonText: "Book Now",
     href: "#contact",
     isPopular: false,
@@ -48,23 +42,19 @@ const pricingPlans = [
     savings: "Save ₹5,000",
   },
   {
-    name: "Premium Plan",
+    name: "Premium 360°",
     originalPrice: "29999",
     discountedPrice: "24999",
     period: "Lifetime",
     features: [
-      "Up to 25 high-resolution 360° panoramic scenes",
-      "Basic navigation between scenes",
-      "Website embed code (iframe)",
-      "QR code / Link access for easy sharing",
-      "Optimized for Google Maps & Google Business Profile",
-      "360° photo soft copies (at NO additional cost)",
+      "Up to 25 panoramic scenes",
+      "Basic navigation",
+      "Website embed code",
+      "Google Maps Optimized",
       "Custom Branding",
-      "Local Business Map Ranking Boost Helper",
-      "Onsite 360° Shoot at Your Business Location",
-      "Delivery: 7–10 Working Days",
+      "Delivery: 7–10 Days",
     ],
-    description: "For hotels, resorts & large businesses",
+    description: "For hotels & large businesses",
     buttonText: "Book Now",
     href: "#contact",
     isPopular: true,
@@ -72,27 +62,82 @@ const pricingPlans = [
     savings: "Save ₹5,000",
   },
   {
-    name: "Enterprise Plan",
+    name: "Enterprise",
     discountedPrice: "On Request",
     period: "Lifetime",
     features: [
-      "Unlimited / Custom panoramic scenes",
-      "Multi-floor, large-area & campus-level coverage",
+      "Unlimited panoramic scenes",
+      "Multi-floor coverage",
       "Custom Branding",
-      "Website embed code (iframe)",
-      "Basic navigation between scenes",
-      "QR code / Link access for easy sharing",
-      "Custom Delivery Timeline (Project-Based)",
-      "Onsite 360° Shoot at Your Business Location",
-      "Optimized for Google Maps & Google Business Profile",
-      "360° photo soft copies (at NO additional cost)",
-      "Priority Onsite 360° Shoot",
-      "Local Business Map Ranking Boost Helper",
+      "Website embed code",
+      "Priority Onsite Shoot",
+      "Project-Based Timeline",
     ],
-    description: "For campuses, malls & multi-location businesses",
+    description: "For campuses & malls",
     buttonText: "Contact Us",
     href: "#contact",
     isPopular: false,
+  },
+];
+
+const digitalServicesPlans = [
+  {
+    name: "SEO Services",
+    originalPrice: "9999",
+    discountedPrice: "7000",
+    period: "Per Project",
+    features: [
+      "Google Maps Optimization",
+      "Keyword Research",
+      "Local SEO Setup",
+      "Business Profile Tuning",
+      "Search Visibility Boost",
+      "Monthly Report",
+    ],
+    description: "Boost your local search ranking",
+    buttonText: "Get Started",
+    href: "#contact",
+    isPopular: false,
+    badge: "Most Affordable",
+    savings: "Save ₹2,999",
+  },
+  {
+    name: "Static Website",
+    originalPrice: "19999",
+    discountedPrice: "15000",
+    period: "Per Project",
+    features: [
+      "Modern Single Page Design",
+      "Fully Responsive (Mobile)",
+      "Contact Form Integration",
+      "Speed Optimized",
+      "Basic SEO Included",
+      "1 Year Maintenance",
+    ],
+    description: "Perfect for a professional online presence",
+    buttonText: "Build Now",
+    href: "#contact",
+    isPopular: true,
+    badge: "Popular Choice",
+    savings: "Save ₹4,999",
+  },
+  {
+    name: "Custom Website",
+    discountedPrice: "15000",
+    period: "Starting From",
+    features: [
+      "Multi-page Dynamic Website",
+      "Custom Features & Logic",
+      "CMS Integration",
+      "Advanced SEO Setup",
+      "E-commerce Options",
+      "Requirement Based Analysis",
+    ],
+    description: "Tailored to your specific business needs",
+    buttonText: "Analyze Requirements",
+    href: "#contact",
+    isPopular: false,
+    badge: "Tailor Made",
   },
 ];
 
@@ -105,11 +150,17 @@ const Pricing = () => {
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 space-y-20">
         <PricingComponent
-          plans={pricingPlans}
-          title="Choose a Professional 360° Virtual Tour Service Plan"
-          description="For Your Local Business Growth — One-Time Investment, Lifetime Results"
+          plans={virtualTourPlans}
+          title="360° Virtual Tour Plans"
+          description="Transform your physical space into a digital experience."
+        />
+        
+        <PricingComponent
+          plans={digitalServicesPlans}
+          title="Website & SEO Services"
+          description="Elevate your digital presence with professional web development and search optimization."
         />
       </div>
     </section>

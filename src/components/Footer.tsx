@@ -20,19 +20,21 @@ function Footer() {
     {
       title: "Services",
       links: [
-        { label: "360° Virtual Tours", href: "#services" },
-        { label: "Google Maps Integration", href: "#services" },
-        { label: "Hotel Photography", href: "#services" },
-        { label: "Restaurant Tours", href: "#services" },
+        { label: "360° Virtual Tours", href: "/#services" },
+        { label: "Website Development", href: "/#services" },
+        { label: "SEO Optimization", href: "/#services" },
+        { label: "Google Maps Integration", href: "/#services" },
       ],
     },
     {
       title: "Quick Links",
       links: [
-        { label: "Pricing", href: "#pricing" },
+        { label: "About Us", href: "/about", isRoute: true },
+        { label: "Portfolio", href: "/portfolio", isRoute: true },
+        { label: "Pricing", href: "/#pricing" },
         {
           label: "Contact Us",
-          href: "#contact",
+          href: "/#contact",
           pulse: true,
         },
         { label: "Privacy Policy", href: "/privacy-policy", isRoute: true },
@@ -54,7 +56,7 @@ function Footer() {
     },
     {
       icon: <MapPin size={18} className="text-[#00CED1]" />,
-      text: "India",
+      text: "F1-707, Meerut Sports City, Supertech, Modipuram, Meerut, UP 250110",
     },
   ];
 

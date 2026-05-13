@@ -99,11 +99,11 @@ const Contact = () => {
                 <div>
                   <div className="text-sm text-muted-foreground mb-2">Location</div>
                   <div className="font-semibold text-lg">
-                    Available Pan-India
+                    F1-707, Meerut Sports City
                   </div>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Serving clients nationwide
+                  Supertech, Modipuram, Meerut, UP 250110
                 </div>
               </div>
             </div>

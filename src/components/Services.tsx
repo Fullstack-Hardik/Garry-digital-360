@@ -1,22 +1,37 @@
 'use client';
-import { Camera, Sparkles, Laptop, Zap, Globe, Shield } from 'lucide-react';
+import { Camera, Sparkles, Laptop, Zap, Globe, Shield, Search, Palette, Monitor, Map, Aperture, TrendingUp } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { FeatureCard } from '@/components/ui/grid-feature-cards';
 
 const services = [
   {
-    title: '360° Photography',
+    title: '360° Virtual Tours',
     icon: Camera,
-    description: 'Professional panoramic photography with state-of-the-art equipment for stunning virtual tours.',
+    description: 'Premium panoramic photography and virtual tour creation for businesses of all sizes.',
+  },
+  {
+    title: 'Website Development',
+    icon: Monitor,
+    description: 'Custom static and dynamic websites tailored to your brand, optimized for performance.',
+  },
+  {
+    title: 'SEO Optimization',
+    icon: TrendingUp,
+    description: 'Boost your online visibility and rank higher on Google search results with our SEO services.',
+  },
+  {
+    title: 'Template Designing',
+    icon: Palette,
+    description: 'Professional template designs that match your brand identity and engage your audience.',
   },
   {
     title: 'Google Maps Integration',
-    icon: Globe,
+    icon: Map,
     description: 'Seamless integration with Google Maps & Google Street View for maximum visibility.',
   },
   {
     title: 'HDR Editing',
-    icon: Sparkles,
+    icon: Aperture,
     description: 'Advanced HDR editing to showcase your space in the best possible light.',
   },
   {
