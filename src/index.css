@@ -139,7 +139,7 @@
   }
 
   .glass-premium {
-    @apply backdrop-blur-2xl bg-white/[0.03] border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    @apply backdrop-blur-[40px] bg-black/40 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
   }
 
   .glow {
