@@ -12,12 +12,13 @@ const Navbar = () => {
   const location = useLocation();
   
   const navLinks = [
-    { name: "Home", href: "#hero", id: "hero" },
-    { name: "About", href: "#about", id: "about" },
-    { name: "Services", href: "#services", id: "services" },
-    { name: "Portfolio", href: "#portfolio", id: "portfolio" },
-    { name: "Pricing", href: "#pricing", id: "pricing" },
-    { name: "Contact", href: "#contact", id: "contact" },
+    { name: "Home", href: "/#hero", id: "hero" },
+    { name: "About", href: "/#about", id: "about" },
+    { name: "Services", href: "/#services", id: "services" },
+    { name: "Portfolio", href: "/#portfolio", id: "portfolio" },
+    { name: "Pricing", href: "/#pricing", id: "pricing" },
+    { name: "Blog", href: "/blog", id: "blog" },
+    { name: "Contact", href: "/#contact", id: "contact" },
   ];
 
   // Handle scroll for sticky effect and active section
@@ -48,8 +49,19 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.includes("#")) {
+      setIsOpen(false);
+      return; // It's a standard route, let <Link> handle it
+    }
+    
+    const targetId = href.split("#")[1];
+    
+    if (location.pathname !== "/") {
+      setIsOpen(false);
+      return; // Let <Link> handle cross-page navigation to the hash
+    }
+
     e.preventDefault();
-    const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
     if (elem) {
       window.scrollTo({
@@ -91,24 +103,24 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={`px-4 py-2 text-sm font-bold transition-all duration-300 relative group rounded-full ${
-                  activeSection === link.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  (activeSection === link.id || location.pathname === link.href) ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.name}
-                {activeSection === link.id && (
+                {(activeSection === link.id || location.pathname === link.href) && (
                   <motion.span 
                     layoutId="activeNav"
                     className="absolute inset-0 bg-primary/10 rounded-full -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full transition-all duration-300 ${activeSection === link.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-              </a>
+                <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full transition-all duration-300 ${(activeSection === link.id || location.pathname === link.href) ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+              </Link>
             ))}
             <div className="ml-4 pl-4 border-l border-white/10">
               <a href="#contact" onClick={(e) => scrollToSection(e, "#contact")}>
@@ -160,22 +172,25 @@ const Navbar = () => {
             >
               <div className="p-4 flex flex-col gap-2">
                 {navLinks.map((link, idx) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className={`flex items-center justify-between p-4 rounded-2xl transition-all duration-300 ${
-                      activeSection === link.id 
-                        ? "bg-primary/10 text-primary border border-primary/20" 
-                        : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
-                    }`}
-                    onClick={(e) => scrollToSection(e, link.href)}
                   >
-                    <span className="text-lg font-bold">{link.name}</span>
-                    <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${activeSection === link.id ? "rotate-90 text-primary" : "text-muted-foreground/30"}`} />
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className={`flex items-center justify-between p-4 rounded-2xl transition-all duration-300 ${
+                        (activeSection === link.id || location.pathname === link.href)
+                          ? "bg-primary/10 text-primary border border-primary/20" 
+                          : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                      }`}
+                      onClick={(e) => scrollToSection(e, link.href)}
+                    >
+                      <span className="text-lg font-bold">{link.name}</span>
+                      <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${(activeSection === link.id || location.pathname === link.href) ? "rotate-90 text-primary" : "text-muted-foreground/30"}`} />
+                    </Link>
+                  </motion.div>
                 ))}
                 <div className="mt-4 p-4 border-t border-white/5">
                   <Button 
