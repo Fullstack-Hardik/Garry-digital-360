@@ -131,7 +131,11 @@ export function WebGLShader() {
           refs.mesh.material.dispose()
         }
       }
-      refs.renderer?.dispose()
+      if (refs.renderer) {
+        refs.renderer.forceContextLoss()
+        refs.renderer.dispose()
+        refs.renderer.domElement.remove()
+      }
     }
   }, [])
 

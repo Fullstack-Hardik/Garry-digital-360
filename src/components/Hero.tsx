@@ -120,7 +120,8 @@ const Hero = () => {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
+                    poster="/og-image.jpg"
                   >
                     <source src="/videos/demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -174,6 +175,8 @@ const Hero = () => {
                   src={logo} 
                   alt="GarryDigital360 — Professional 360 virtual tour service and Google Street View Trusted Photographer" 
                   className="w-full h-full object-cover rounded-full"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
 

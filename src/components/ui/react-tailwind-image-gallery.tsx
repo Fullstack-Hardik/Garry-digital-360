@@ -32,6 +32,8 @@ export function Gallery({ data, onImageClick }: GalleryProps) {
                 src={img.src}
                 alt={img.alt}
                 className="gallery-img w-full h-full object-cover aspect-square sm:aspect-auto"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-lg font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
@@ -74,6 +76,8 @@ export function ImageModal({ src, onClose }: ImageModalProps) {
         alt="Enlarged view"
         className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl object-contain animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
+        loading="lazy"
+        decoding="async"
       />
       <button
         className="absolute top-5 right-5 text-white p-2 rounded-full hover:bg-white/10 transition-colors"

@@ -81,6 +81,7 @@ const Navbar = () => {
             href="#hero" 
             onClick={(e) => scrollToSection(e, "#hero")}
             className="flex items-center gap-3 group"
+            aria-label="Home"
           >
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-500" />
@@ -135,6 +136,8 @@ const Navbar = () => {
           <button
             className="md:hidden w-11 h-11 flex items-center justify-center rounded-2xl glass-premium border border-white/10 hover:bg-white/10 transition-all active:scale-90"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isOpen}
           >
             <AnimatePresence mode="wait">
               {isOpen ? (
