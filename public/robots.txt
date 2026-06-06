@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://garrydigital360.vercel.app/sitemap.xml
+Sitemap: https://garrydigital360.in/sitemap.xml

@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     Sitemap({
-      hostname: "https://garrydigital360.vercel.app",
+      hostname: "https://garrydigital360.in",
       dynamicRoutes: [
         "/",
         "/about",
