@@ -2,10 +2,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Award, Users, Target, ShieldCheck } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title="About Us | Garry Digital 360"
+        description="Learn about Garry Digital 360, a leading digital solutions agency specializing in immersive 360° virtual tours, premium website development, and high-impact SEO."
+        canonicalPath="/about"
+      />
       <Navbar />
       
       <main className="pt-24 pb-20">

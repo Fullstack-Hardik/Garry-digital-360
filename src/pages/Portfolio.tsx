@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ExternalLink, Camera, Laptop, Globe } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const portfolioItems = [
   {
@@ -45,6 +46,11 @@ const portfolioItems = [
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title="Our Portfolio | Garry Digital 360"
+        description="A showcase of our best work in immersive 360° virtual tours, web development, and digital marketing."
+        canonicalPath="/portfolio"
+      />
       <Navbar />
       
       <main className="pt-24 pb-20">

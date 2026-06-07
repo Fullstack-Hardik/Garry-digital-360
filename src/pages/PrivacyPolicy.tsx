@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Shield, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title="Privacy Policy | Garry Digital 360"
+        description="Privacy policy and data usage guidelines for Garry Digital 360."
+        canonicalPath="/privacy-policy"
+      />
       {/* Header */}
       <div className="border-b border-border/50 bg-card/30 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">

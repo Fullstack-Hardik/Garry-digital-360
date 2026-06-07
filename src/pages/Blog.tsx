@@ -1,10 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import { SEO } from "@/components/SEO";
 
 export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Blog | Garry Digital 360"
+        description="Read the latest insights on 360 camera photography, virtual tours, and local SEO strategies in India."
+        canonicalPath="/blog"
+      />
       <Navbar />
       
       <main className="pt-24 pb-16">

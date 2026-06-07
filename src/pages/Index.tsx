@@ -19,9 +19,16 @@ const GallerySection = React.lazy(() => import("@/components/GallerySection"));
 const Process = React.lazy(() => import("@/components/Process"));
 const WebGLShader = React.lazy(() => import("@/components/ui/web-gl-shader").then(m => ({ default: m.WebGLShader })));
 
+import { SEO } from "@/components/SEO";
+
 const Index = () => {
   return (
     <div className="min-h-screen relative">
+      <SEO 
+        title="SEO Specialist & 360° Virtual Tour Photographer | Garry Digital 360"
+        description="Garry Digital 360 — SEO Specialist and expert in 360 camera photography. Immersive 360° virtual tours in Delhi, Uttar Pradesh, and nationwide. Grow your business today."
+        canonicalPath="/"
+      />
       <Suspense fallback={null}>
         {/* WebGL Shader Background */}
         <WebGLShader />
