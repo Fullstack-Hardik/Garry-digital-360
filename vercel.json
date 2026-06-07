@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "garrydigital360.vercel.app"
+        }
+      ],
+      "destination": "https://garrydigital360.in/$1",
+      "permanent": true
+    }
+  ]
+}
