@@ -15,8 +15,8 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     Sitemap({
       hostname: "https://garrydigital360.in",
+      exclude: ["/google397a558b9822ffa2"],
       dynamicRoutes: [
-        "/",
         "/about",
         "/portfolio",
         "/privacy-policy",
